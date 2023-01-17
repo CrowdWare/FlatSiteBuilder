@@ -1,6 +1,6 @@
 # FlatSiteBuilder
 
-This desktop app is working as a content mangement system and is producing a webassembly based web content to use with github pages or any other service provider.
+This desktop app is working as a content mangement system and is producing web content to use with github pages or any other service provider.
 I have been inspired by Wordpress and the Divi - PageBuilder.
 
 Have a look at our web site: https://artanidos.github.io/FlatSiteBuilder
@@ -10,11 +10,12 @@ Have a look at our web site: https://artanidos.github.io/FlatSiteBuilder
 ## Prerequisits
 In order to work with FlatSiteBuilder you have to install the following packages.  
 ```console
-pip3 install --user PySide6
-pip3 install --user PyQtWebEngine
-pip3 install --user django
-pip3 install --user dulwich
-pip3 install --user jinja2
+pip install --user PySide6
+pip install --user PyQtWebEngine
+pip install --user django
+pip install --user dulwich
+pip install --user jinja2
+pip install --user markdown2
 ```
 
 You also need to install the pyqt5 development tools.
