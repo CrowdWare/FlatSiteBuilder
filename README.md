@@ -1,4 +1,14 @@
-# FlatSiteBuilder
+ ```console
+  ______ _       _    _____ _ _       ____        _ _     _           
+ |  ____| |     | |  / ____(_) |     |  _ \      (_) |   | |          
+ | |__  | | __ _| |_| (___  _| |_ ___| |_) |_   _ _| | __| | ___ _ __ 
+ |  __| | |/ _` | __|\___ \| | __/ _ \  _ <| | | | | |/ _` |/ _ \ '__|
+ | |    | | (_| | |_ ____) | | ||  __/ |_) | |_| | | | (_| |  __/ |   
+ |_|    |_|\__,_|\__|_____/|_|\__\___|____/ \__,_|_|_|\__,_|\___|_|    
+```                                                                      
+                                                                      
+
+
 
 This desktop app is working as a content mangement system and is producing web content to use with github pages or any other service provider.
 I have been inspired by Wordpress and the Divi - PageBuilder.
