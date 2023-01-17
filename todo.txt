@@ -1,0 +1,37 @@
+# Program
+    - WASM part will be a plugin
+    - Palette.Base was Palette.Background...we need that back
+    - alternative for self.innerHtml.setTabStopWidth(4 * metrics.width(' '))
+   
+
+    DefaultThemeEditor load / save
+    RevolutionSlider Editor
+    Carousel Editor not ready yet
+    Wysiwyg editor for HTML
+    Image Editor does not show the right image when starting
+    Blog.html is not regenerated every time
+    Logo for page and post editable
+    RevolutionSlider fullwidth att editable
+    Carousel add slide seek not implemented yet
+    BackButton for Page Preview, so that the user can continue editing
+    MenuEditor Left/Right buttons for SubMenus activate
+    Sort contentlist
+    
+    The include and layout files could be editable, even if I personally prefer to use Visual Studio Code, 
+        but there are users outside who don't know where and how to edit those files 
+
+    - Preview for Mobile, 720 x 1560 (Huawei Y6s) , selectable, adjustable
+        Resize window might show screen dimensions
+ 
+    Bug: In text editor dropping a row and trying to undo...results in a crash and unreadable QML
+
+    Bug: After Script Editor close
+        File "/home/art/SourceCode/FlatSiteBuilderPython/widgets/contenteditor.py", line 418, in editorClose
+        if self.editor.changed:
+        AttributeError: 'NoneType' object has no attribute 'changed'
+
+
+# Website
+    Translate website (FlatSiteBuider) from XML to QML
+    Host a new website on FlatSiteBuiderPython
+    News should be in english and german

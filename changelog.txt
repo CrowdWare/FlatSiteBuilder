@@ -1,0 +1,50 @@
+2.3.0
+-----
+- Switched to Pyside6
+
+2.2.2
+---
+- Bugfix: RevolutionSlider
+
+2.2.1
+---
+The menu item now has an additional value called attributes. Here one can store the "class" for example. (class="scrollTo")
+Page language is now editable.
+Debian package added
+
+2.2.0
+---
+Menu editor is now functioning completely
+
+Content list is now sortable
+
+Markdown Editor
+
+Bugfix: animate.css, from image plugin, rights have been changed so that its readable by a browser
+        that means, that the image animations are now working properly
+
+
+2.1.9
+---
+Bugfix: adding page and then rebuild had a temp filename cashed
+Bugfix: saving site has now changed to one line of code
+
+
+2.1.8
+---
+Linux version
+Icon changed from SVG to PNG
+
+2.1.7
+---
+Bugfix: Add Menuiten
+
+SiteSetting: Output path added, so you can use "../docs" for example to create the output files outside the source directory
+
+Images can now have a hyperlink
+
+Fixed some windows specific bugs
+
+QML files now saved in one line of code (buffer cashed, no half ready qml files saved anymore)
+
+RenderEngine now creates UTF-8 HTML files. (There was a problem on Windows with German Umlauts)

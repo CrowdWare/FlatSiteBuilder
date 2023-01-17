@@ -1,0 +1,10 @@
+<RCC>
+    <qresource>
+        <file>markdowneditor.png</file>
+        <file>bold.svg</file>
+        <file>italic.svg</file>
+        <file>table.svg</file>
+        <file>link.svg</file>
+        <file>image.svg</file>
+    </qresource>
+</RCC>
