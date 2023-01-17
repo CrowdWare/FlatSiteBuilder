@@ -56,7 +56,7 @@ I only have **one** license for this.
 You can buy it here: https://wrapbootstrap.com/user/stepofweb
 
 # Syntax
-The syntax for the templates is based on [Django](https://www.djangoproject.com/start/). That also means that we render the HTML using **Jinja**.
+The syntax for the templates is based on [Django](https://www.djangoproject.com/start/). That also means that we render the HTML using [Jinja](https://palletsprojects.com/p/jinja/).
 
 ## Variable
 ```django
