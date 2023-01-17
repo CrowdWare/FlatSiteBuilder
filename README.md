@@ -35,15 +35,15 @@ On Windows you will find **pyside6-rcc** here: C:\Users\<User>\AppData\Local\Pro
 ## How to run
 Open the terminal and download the source code using git.
 ```console
-git clone https://github.com/Artanidos/FlatSiteBuilderPython.git
+git clone https://github.com/CrowdWare/FlatSiteBuilder.git
 ```
 Then cd into FlatSiteBuilderPython
 ```console
-cd FlatSiteBuilderPython
+cd FlatSiteBuilder
 ```
 Then run python to execute the app.
 ```console
-python3 main.py
+python main.py
 ```
 
 
