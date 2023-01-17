@@ -1,16 +1,4 @@
- ```console
-  _____ _       _   ____  _ _       ____        _ _     _           
- |  ___| | __ _| |_/ ___|(_) |_ ___| __ ) _   _(_) | __| | ___ _ __ 
- | |_  | |/ _` | __\___ \| | __/ _ \  _ \| | | | | |/ _` |/ _ \ '__|
- |  _| | | (_| | |_ ___) | | ||  __/ |_) | |_| | | | (_| |  __/ |   
- |_|   |_|\__,_|\__|____/|_|\__\___|____/ \__,_|_|_|\__,_|\___|_|   
- 
-Powered by CrowdWare
-```   
 ![](images/repository-open-graph-template.png)
-                                                                      
-
-
 
 This desktop app is working as a content mangement system and is producing web content to use with github pages or any other service provider.
 I have been inspired by Wordpress and the Divi - PageBuilder.
