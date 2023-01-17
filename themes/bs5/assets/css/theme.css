@@ -1,0 +1,11 @@
+/* THIS HAS BEEN CHANGED IN BOOTSTRAP 5 TO .img-fluid*/
+.img-responsive 
+{
+    max-width: 100%;
+    height: auto;
+}
+  
+.navbar 
+{
+    background-color: gray;
+}

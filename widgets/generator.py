@@ -18,7 +18,16 @@
 #  along with FlatSiteBuilder.  If not, see <http://www.gnu.org/licenses/>.
 #
 #############################################################################
+
+from django.template import Context, Engine
+from django.utils.safestring import mark_safe
+from widgets.content import ContentType
+from widgets.plugins import Plugins
 import os
+import shutil
+import sys
+import html
+from jinja2 import Template
 
 
 class Generator:
@@ -36,3 +45,255 @@ class Generator:
         self.site = site
         self.output_dir = site.output
         site_dir = os.path.join(site.source_path, self.output_dir)
+        if not content_to_build:
+            # clear directory
+            for r, dirs, files in os.walk(site_dir):
+                if not ".git" in r:
+                    for f in files:
+                        try:
+                            os.remove(os.path.join(site_dir, f))
+                        except:
+                            pass
+
+                    for d in dirs:
+                        try:
+                            shutil.rmtree(os.path.join(site_dir, d))
+                        except:
+                            pass
+
+        pages = []
+        posts = []
+        menus = {}
+
+        for content in site.pages:
+            cm = {}
+            cm["author"] = content.author
+            cm["date"] = content.date
+            cm["layout"] = content.layout
+            cm["menu"] = content.menu
+            cm["source"] = content.source
+            cm["title"] = content.title
+            if content.language == "":
+                cm["language"] = site.language
+            else:
+                cm["language"] = content.language
+            cm["url"] = content.url
+            if content.logo:
+                cm["logo"] = content.logo
+            else:
+                cm["logo"] = site.logo
+            cm["keywords"] = content.keywords
+            cm["script"] = content.script
+
+            for att, value in content.attributes.items():
+                cm[att] = value
+
+            pages.append(cm)
+
+        for content in site.posts:
+            cm = {}
+            cm["author"] = content.author
+            cm["date"] = content.date
+            cm["excerpt"] = content.excerpt
+            cm["layout"] = content.layout
+            cm["menu"] = content.menu
+            cm["source"] = content.source
+            cm["title"] = content.title
+            cm["url"] = content.url
+            if content.language == "":
+                cm["language"] = site.language
+            else:
+                cm["language"] = content.language
+            if content.logo:
+                cm["logo"] = content.logo
+            else:
+                cm["logo"] = site.logo
+            cm["keywords"] = content.keywords
+            cm["script"] = content.script
+
+            for att, value in content.attributes.items():
+                cm[att] = value
+
+            posts.append(cm)
+
+        for i in range(site.menus.menuCount()):
+            menu = site.menus.menu(i)
+            items = []
+            for j in range(menu.itemCount()):
+                item = menu.item(j)
+                menuitem = {}
+                menuitem["title"] = item.title
+                menuitem["url"] = item.url
+                menuitem["icon"] = item.icon
+                menuitem["attributes"] = mark_safe(item.attributes)
+
+                subitems = []
+                for k in range(item.itemCount()):
+                    subitem = item.item(k)
+                    submenuitem = {}
+                    submenuitem["title"] = subitem.title
+                    submenuitem["url"] = subitem.url
+                    submenuitem["icon"] = subitem.icon
+                    submenuitem["attributes"] = mark_safe(subitem.attributes)
+                    subitems.append(submenuitem)
+
+                menuitem["items"] = subitems
+                if len(subitems) > 0:
+                    menuitem["hasItems"] = "true"
+                else:
+                    menuitem["hasItems"] = "false"
+                items.append(menuitem)
+
+            menus[menu.name] = items
+
+        #qStableSort(posts.begin(), posts.end(), postLaterThan)
+
+        sitevars = {}
+        sitevars["title"] = site.title
+        sitevars["description"] = site.description
+        sitevars["theme"] = site.theme
+        sitevars["copyright"] = site.copyright
+        sitevars["source"] = site.source_path
+        sitevars["keywords"] = site.keywords
+        sitevars["author"] = site.author
+        sitevars["language"] = site.language
+        if site.logo:
+            sitevars["logo"] = site.logo
+        else:
+            sitevars["logo"] = "logo.png"
+        sitevars["pages"] = pages
+        sitevars["posts"] = posts
+
+        for att, value in site.attributes.items():
+            sitevars[att] = value
+        act = Plugins.actualThemeEditorPlugin()
+        if act:
+            tei = Plugins.getThemePlugin(Plugins.actualThemeEditorPlugin())
+            if tei:
+                tei.setWindow(win)
+                tei.setSourcePath(site.source_path)
+                themevars = tei.themeVars()
+        else:
+            themevars = {}
+
+        context = Context()
+        context["site"] = sitevars
+        context["theme"] = themevars
+
+        copy_assets = False
+        if not os.path.exists(site_dir):
+            os.mkdir(site_dir)
+            copy_assets = True
+
+        if not content_to_build or copy_assets:
+            self.copytree(os.path.join(Generator.install_directory, "themes", site.theme, "assets"), os.path.join(site.source_path, self.output_dir, "assets"))
+            if os.path.exists((os.path.join(site.source_path, "assets"))):
+                self.copytree(os.path.join(site.source_path, "assets"), os.path.join(site.source_path, self.output_dir, "assets"))
+            if os.path.exists((os.path.join(site.source_path, "content"))):
+                self.copytree(os.path.join(site.source_path, "content"), os.path.join(site.source_path, self.output_dir))
+
+            for page in site.pages:
+                self.generateContent(page, context, menus, site)
+            for post in site.posts:
+                self.generateContent(post, context, menus, site)
+        else:
+            self.generateContent(content_to_build, context, menus, site)
+
+    def generateContent(self, content, context, menus, site):
+        dirs = [
+            os.path.join(self.site.source_path, "includes"),
+            os.path.join(self.site.source_path, "layouts"),
+            os.path.join(Generator.install_directory, "themes", self.site.theme, "layouts"),
+            os.path.join(Generator.install_directory, "themes", self.site.theme, "includes")
+        ]
+        eng = Engine(dirs = dirs, debug=True)
+        cm = {}
+
+        if content.content_type == ContentType.POST:
+            cm["excerpt"] = content.excerpt
+        cm["author"] = content.author
+        cm["date"] = content.date.toString("dd.MM.yyyy")
+        cm["layout"] = content.layout
+        cm["menu"] = content.menu
+        cm["source"] = content.source
+        cm["title"] = content.title
+        cm["url"] = content.url
+        if content.language == "":
+            cm["language"] = site.language
+        else:
+            cm["language"] = content.language
+        if content.logo:
+            cm["logo"] = content.logo
+        else:
+            cm["logo"] = site.logo
+        cm["keywords"] = content.keywords
+        cm["script"] = mark_safe(content.script)
+        cm["menuitems"] = menus[content.menu]
+
+        used_tag_list = []
+        self.content = ""
+        for i in range(content.itemCount()):
+            item = content.item(i)
+            self.content += item.getHtml()
+            item.collectTagNames(used_tag_list)
+
+        pluginvars = {}
+        pluginvars["styles"] = ""
+        pluginvars["scripts"] = ""
+        for name in Plugins.elementPluginNames():
+            plugin = Plugins.element_plugins[name]
+            if plugin.tag_name in used_tag_list:
+                
+                plugin = Plugins.element_plugins[name]
+                pluginvars["styles"] = pluginvars["styles"] + plugin.pluginStyles()
+                pluginvars["scripts"] = pluginvars["scripts"] + plugin.pluginScripts()
+                plugin.installAssets(os.path.join(site.source_path, self.output_dir, "assets"))
+        
+        pluginvars["styles"] = mark_safe(pluginvars["styles"])
+        pluginvars["scripts"] = mark_safe(pluginvars["scripts"])
+        context["plugin"] = pluginvars
+
+        layout = content.layout
+        if not layout:
+            layout = "default"
+
+        context["page"] = cm
+
+        ctx = {}
+        ctx["page"] = content
+        ctx["site"] = self.site
+        tmp = Template(self.content)
+        try:
+            xhtml = tmp.render(ctx)
+        except:
+            type, value, traceback = sys.exc_info()
+            msg = "Render content failed"
+            print(msg, type, value, traceback)
+            #todo: debug info from rendering
+            return
+
+        context["content"] = mark_safe(xhtml)
+
+        outputfile = os.path.join(site.source_path, self.output_dir, content.url)
+        try:
+            with open(outputfile, 'w', encoding="utf-8") as f:
+                f.write(eng.render_to_string(layout + ".html", context=context))
+        except:
+            type, value, traceback = sys.exc_info()
+            msg = "Generate content failed: Unable to create file " + outputfile
+            print(msg, type, value, traceback)
+
+    def copytree(self, src, dst):
+        names = os.listdir(src)
+        if not os.path.exists(dst):
+            os.makedirs(dst)
+        for name in names:
+            srcname = os.path.join(src, name)
+            dstname = os.path.join(dst, name)
+            if os.path.isdir(srcname):
+                self.copytree(srcname, dstname)
+            else:
+                try:
+                    shutil.copy2(srcname, dstname)
+                except shutil.SameFileError:
+                    pass

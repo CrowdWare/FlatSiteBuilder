@@ -2,13 +2,13 @@ import FlatSiteBuilder 1.0
 
 Site {
    title: 'default'
-   theme: 'default'
+   theme: 'atropos'
    description: 'desc'
-   copyright: 'cr'
+   copyright: '(C) Copyright 2023 CrowdWare'
    keywords: 'xxc'
    author: 'xcxc'
    logo: ''
    language: ''
-   publisher: ''
+   publisher: 'NoPublisher'
    output: 'docs'
 }

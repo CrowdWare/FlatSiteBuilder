@@ -178,8 +178,8 @@ class MainWindow(QMainWindow):
         menus_button.clicked.connect(self.showMenus)
         pages_button.clicked.connect(self.showPages)
         posts_button.clicked.connect(self.showPosts)
-        #themes_button.clicked.connect(self.showThemes)
-        #self.theme_settings_button.clicked.connect(self.showThemesSettings)
+        themes_button.clicked.connect(self.showThemes)
+        self.theme_settings_button.clicked.connect(self.showThemesSettings)
         self.showDock.clicked.connect(self.showMenu)
         self.navigationdock.visibilityChanged.connect(self.dockVisibilityChanged)
 

@@ -77,7 +77,7 @@ class ModulDialog(QDialog):
         pmHover = QPixmap.fromImage(QImage(":/images/module_hover.png"))
         title = QLabel()
         pal = self.palette()
-        pal.setColor(QPalette.Base, QColor("#999999"))
+        pal.setColor(QPalette.Window, QColor("#999999"))
         pal.setColor(QPalette.Text, QColor("#000000"))
         title.setPalette(pal)
         title.setText(text)

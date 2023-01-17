@@ -1,0 +1,11 @@
+<!-- POSTNAV.HTML -->
+<ul>
+	{% for p in site.pages %}
+		<li>
+		    <a href="{{ p.url }}" {% if p.url == page.url %}class="active"{% endif %}>
+			    {{ p.title }}
+			</a>
+		</li>
+	{% endfor %}
+</ul>
+<!-- /POSTNAV.HTML -->

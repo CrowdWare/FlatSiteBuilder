@@ -38,7 +38,7 @@ class ColumnEditor(QWidget):
         QWidget.__init__(self)
         self.column = None
         pal = self.palette()
-        pal.setColor(QPalette.Base, QColor(self.palette().base().color().name()).lighter())
+        pal.setColor(QPalette.Window, QColor(self.palette().base().color().name()).lighter())
         self.setPalette(pal)
         self.setAutoFillBackground(True)
 

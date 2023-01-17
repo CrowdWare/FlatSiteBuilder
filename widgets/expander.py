@@ -90,14 +90,14 @@ class Expander(QWidget):
         if value:
             self.is_expanded = True
             pal = self.palette()
-            pal.setColor(QPalette.Base, self.selected_color)
+            pal.setColor(QPalette.Window, self.selected_color)
             self.setPalette(pal)
             self.icon.setPixmap(QPixmap.fromImage(self.selected_icon))
             self.hyper.setText("<a style=\"color: " + self.label_selected_color + "; text-decoration: none;\" href=\"#\">" + self.text + "</a>")
         else:
             self.is_expanded = False
             pal = self.palette()
-            pal.setColor(QPalette.Base, QColor(self.normal_color))
+            pal.setColor(QPalette.Window, QColor(self.normal_color))
             self.setPalette(pal)
             self.icon.setPixmap(QPixmap.fromImage(self.normal_icon))
             self.hyper.setText("<a style=\"color: " + self.label_normal_color + "; text-decoration: none;\" href=\"#\">" + self.text + "</a>")
@@ -118,7 +118,7 @@ class Expander(QWidget):
     @color.setter
     def color(self, color):
         pal = self.palette()
-        pal.setColor(QPalette.Base, QColor(color))
+        pal.setColor(QPalette.Window, QColor(color))
         self.setPalette(pal)
 
     def mouseReleaseEvent(self, me):
@@ -154,7 +154,7 @@ class Expander(QWidget):
     def enterEvent(self, event):
         if not self.is_expanded:
             pal = self.palette()
-            pal.setColor(QPalette.Base, QColor(self.hovered_color))
+            pal.setColor(QPalette.Window, QColor(self.hovered_color))
             self.setPalette(pal)
             self.icon.setPixmap(QPixmap.fromImage(self.hovered_icon))
             self.hyper.setText("<a style=\"color: " + self.label_hovered_color + "; text-decoration: none;\" href=\"#\">" + self.text + "</a>")
@@ -163,7 +163,7 @@ class Expander(QWidget):
     def leaveEvent(self, event):
         if not self.is_expanded:
             pal = self.palette()
-            pal.setColor(QPalette.Base, QColor(self.normal_color))
+            pal.setColor(QPalette.Window, QColor(self.normal_color))
             self.setPalette(pal)
             self.icon.setPixmap(QPixmap.fromImage(self.normal_icon))
             self.hyper.setText("<a style=\"color: " + self.label_normal_color + "; text-decoration: none;\" href=\"#\">" + self.text + "</a>")

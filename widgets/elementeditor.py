@@ -122,7 +122,7 @@ class ElementEditor(QWidget):
 
     def setColor(self, name):
         pal = self.palette()
-        pal.setColor(QPalette.Base, QColor(name))
+        pal.setColor(QPalette.Window, QColor(name))
         self.setPalette(pal)
 
     def setMode(self, mode):

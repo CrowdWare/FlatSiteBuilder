@@ -60,7 +60,7 @@ class RowEditor(QWidget):
         layout = QHBoxLayout()
 
         pal = self.palette()
-        pal.setColor(QPalette.Base, QColor(self.palette().alternateBase().color()))
+        pal.setColor(QPalette.Window, QColor(self.palette().alternateBase().color()))
         self.setPalette(pal)
         self.setAutoFillBackground(True)
 

@@ -5,6 +5,7 @@ import MarkdownEditor 1.0
 Content {
     title: "Test"
     menu: "default"
+    keywords: "test,ba,blub"
     layout: "default"
     date: "2023-01-16"
 
@@ -16,13 +17,7 @@ Content {
                 span: 12
 
                 Text {
-                    text: "Item
-{
-	Text
-	{
-		text: &quot;Hello world&quot;
-	}
-}"
+                    text: "&lt;h1&gt;Hello world&lt;h1&gt;"
                 }
 
                 Markdown {
@@ -31,6 +26,14 @@ Content {
 Ipsum dolor"
                 }
             }
+        }
+    }
+
+    Section {
+        fullwidth: true
+
+        Markdown {
+            text: "##Test"
         }
     }
 }

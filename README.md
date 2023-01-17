@@ -10,7 +10,6 @@ Have a look at our web site: https://artanidos.github.io/FlatSiteBuilder
 In order to work with FlatSiteBuilder you have to install the following packages.  
 ```console
 pip install --user PySide6
-pip install --user PyQtWebEngine
 pip install --user django
 pip install --user dulwich
 pip install --user jinja2

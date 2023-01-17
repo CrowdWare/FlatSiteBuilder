@@ -130,9 +130,9 @@ class SectionEditor(QWidget):
     def setBGColor(self):
         pal = self.palette()
         if self.fullwidth:
-            pal.setColor(QPalette.Base, QColor("#800080"))
+            pal.setColor(QPalette.Window, QColor("#800080"))
         else:
-            pal.setColor(QPalette.Base, QColor(self.palette().base().color().name()))
+            pal.setColor(QPalette.Window, QColor(self.palette().base().color().name()))
         self.setPalette(pal)
 
     def addElement(self):

@@ -1,0 +1,28 @@
+<!-- Top Nav -->
+<div class="navbar-collapse nav-main-collapse collapse pull-right">
+	<nav class="nav-main mega-menu">
+		<ul class="nav nav-pills nav-main scroll-menu" id="topMain">
+			{% for item in page.menuitems %}
+			{% if item.hasItems == "true" %}
+			<li class="dropdown">
+				<a class="dropdown-toggle" href="#">
+					<img src="{{ item.icon }}" width="16" height="11" alt="{{ item.title }}" /> {{ item.title }} <i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="dropdown-menu">
+					{% for subitem in item.items %}
+					<li>
+						<a href="{{ subitem.url }}"><img src="{{ subitem.icon }}" width="16" height="11" alt="{{ subitem.title }}" /> {{ subitem.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</li>
+			{% else %}
+			<li{% if item.url == page.url %} class="active"{% endif %}>
+				<a {{ item.attributes }} href="{{ item.url }}">{% if item.icon != "" %}<img src="{{ item.icon }}" width="16" height="11"/>{% endif %}{{ item.title }}</a>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</nav>
+</div>
+<!-- Top Nav end -->
