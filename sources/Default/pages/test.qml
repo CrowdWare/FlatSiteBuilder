@@ -1,6 +1,5 @@
 import FlatSiteBuilder 1.0
 import TextEditor 1.0
-import MarkdownEditor 1.0
 
 Content {
     title: "Test"
@@ -19,21 +18,7 @@ Content {
                 Text {
                     text: "&lt;h1&gt;Hello world&lt;h1&gt;"
                 }
-
-                Markdown {
-                    text: "## Test
-
-Ipsum dolor"
-                }
             }
-        }
-    }
-
-    Section {
-        fullwidth: true
-
-        Markdown {
-            text: "##Test"
         }
     }
 }
