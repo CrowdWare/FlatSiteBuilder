@@ -18,11 +18,6 @@ pip install --user jinja2
 pip install --user markdown2
 ```
 
-You also need to install the pyqt5 development tools.
-```console
-sudo apt install pyqt5-dev-tools
-```  
-
 Before you can run the program you have to build the resources.
 ```console
 pyside6-rcc main.qrc -o main_rc.py
@@ -35,6 +30,7 @@ pyside6-rcc plugins/github.qrc -o plugins/github_rc.py
 pyside6-rcc plugins/shopify.qrc -o plugins/shopify_rc.py
 pyside6-rcc plugins/markdowneditor.qrc -o plugins/markdowneditor_rc.py
 ```
+On Windows you will find **pyside6-rcc** here: C:\Users\<User>\AppData\Local\Programs\Python\Python<version>\Scripts  
 
 ## How to run
 Open the terminal and download the source code using git.
