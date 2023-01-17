@@ -6,7 +6,8 @@
  |_|   |_|\__,_|\__|____/|_|\__\___|____/ \__,_|_|_|\__,_|\___|_|   
  
 Powered by CrowdWare
-```                                                                      
+```   
+![](images/repository-open-graph-template.png)
                                                                       
 
 
@@ -16,7 +17,6 @@ I have been inspired by Wordpress and the Divi - PageBuilder.
 
 Have a look at our web site: https://artanidos.github.io/FlatSiteBuilder
 
-![](FlatSiteBuilder.png)
 
 ## Prerequisits
 In order to work with FlatSiteBuilder you have to install the following packages.  
