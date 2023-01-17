@@ -25,14 +25,15 @@ sudo apt install pyqt5-dev-tools
 
 Before you can run the program you have to build the resources.
 ```console
-pyrcc5 main.qrc -o main_rc.py
-pyrcc5 resources.qrc -o resources.py
-pyrcc5 plugins/carousel.qrc -o plugins/carousel_rc.py
-pyrcc5 plugins/imageeditor.qrc -o plugins/imageeditor_rc.py
-pyrcc5 plugins/revolution.qrc -o plugins/revolution_rc.py
-pyrcc5 plugins/texteditor.qrc -o plugins/texteditor_rc.py
-pyrcc5 plugins/github.qrc -o plugins/github_rc.py
-pyrcc5 plugins/shopify.qrc -o plugins/shopify_rc.py
+pyside6-rcc main.qrc -o main_rc.py
+pyside6-rcc resources.qrc -o resources.py
+pyside6-rcc plugins/carousel.qrc -o plugins/carousel_rc.py
+pyside6-rcc plugins/imageeditor.qrc -o plugins/imageeditor_rc.py
+pyside6-rcc plugins/revolution.qrc -o plugins/revolution_rc.py
+pyside6-rcc plugins/texteditor.qrc -o plugins/texteditor_rc.py
+pyside6-rcc plugins/github.qrc -o plugins/github_rc.py
+pyside6-rcc plugins/shopify.qrc -o plugins/shopify_rc.py
+pyside6-rcc plugins/markdowneditor.qrc -o plugins/markdowneditor_rc.py
 ```
 
 ## How to run
