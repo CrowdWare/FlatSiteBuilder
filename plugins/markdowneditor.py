@@ -67,7 +67,7 @@ class MarkdownEditor(ElementEditorInterface):
         self.html.setAcceptRichText(False)
         self.html.setLineWrapMode(QTextEdit.NoWrap)
         metrics = QFontMetrics(font)
-        #self.html.setTabStopWidth(4 * metrics.width(' '))
+        self.html.setTabStopDistance(4 * metrics.width(' '))
 
         self.highlighter = XmlHighlighter(self.html.document())
 

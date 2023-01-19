@@ -1,9 +1,4 @@
 # Program
-    - WASM part will be a plugin
-    - Palette.Base was Palette.Background...we need that back
-    - alternative for self.innerHtml.setTabStopWidth(4 * metrics.width(' '))
-   
-
     DefaultThemeEditor load / save
     RevolutionSlider Editor
     Carousel Editor not ready yet
