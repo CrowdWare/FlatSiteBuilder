@@ -1,6 +1,7 @@
 2.3.0
 -----
 - Switched to Pyside6
+- Added a plugin to use wasm technology. This wasm will render QML, so one can create native apps in the browser.
 
 2.2.2
 ---
