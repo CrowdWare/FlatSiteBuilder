@@ -53,13 +53,13 @@ class Generator:
                         try:
                             os.remove(os.path.join(site_dir, f))
                         except:
-                            pass
+                            print("unable to remove file:", f)
 
                     for d in dirs:
                         try:
                             shutil.rmtree(os.path.join(site_dir, d))
                         except:
-                            pass
+                            print("unable to remove dir:", d)
 
         pages = []
         posts = []

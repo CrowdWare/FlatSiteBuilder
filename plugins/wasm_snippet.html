@@ -1,0 +1,58 @@
+
+<figure style="overflow:visible;" id="qtspinner">
+    <center style="margin-top:1.5em; line-height:150%; color: #ffffff;">
+      <img src="assets/plugins/wasm/wasm.svg" width="200" height="200" style="display:block"></img>
+      <strong>QML App is loading: appqmlwasm</strong>
+      <div id="qtstatus"></div>
+      <noscript>JavaScript is disabled. Please enable JavaScript to use this application.</noscript>
+    </center>
+</figure>
+<canvas id="qtcanvas" style="width: 100%; height: 100%;"></canvas>
+    <script type='text/javascript'>
+      let qtLoader = undefined;
+      function init() 
+      {
+        var spinner = document.querySelector('#qtspinner');
+        var canvas = document.querySelector('#qtcanvas');
+        var status = document.querySelector('#qtstatus')
+
+        qtLoader = QtLoader(
+        {
+            canvasElements : [canvas],
+            showLoader: function(loaderStatus) {
+                spinner.style.display = 'block';
+                canvas.style.display = 'none';
+                status.innerHTML = loaderStatus + "...";
+            },
+            showError: function(errorText) {
+                status.innerHTML = errorText;
+                spinner.style.display = 'block';
+                canvas.style.display = 'none';
+            },
+            showExit: function() {
+                status.innerHTML = "Application exit";
+                if (qtLoader.exitCode !== undefined)
+                    status.innerHTML += " with code " + qtLoader.exitCode;
+                if (qtLoader.exitText !== undefined)
+                    status.innerHTML += " (" + qtLoader.exitText + ")";
+                spinner.style.display = 'block';
+                canvas.style.display = 'none';
+            },
+            showCanvas: function() {
+                spinner.style.display = 'none';
+                canvas.style.display = 'block';
+            },
+        });
+        qtLoader.loadEmscriptenModule("appqmlwasm", {{contenUrl}}, {{theme}}, {{foreground}}, {{background}}, {{primary}}, {{accent}});
+      }
+
+      window.addEventListener('hashchange', () => 
+      {
+        var ptr  = qtLoader.module().allocate(qtLoader.module().intArrayFromString(window.location.hash), 'i8', 0);
+        if(window.location.hash.length > 0)
+          qtLoader.module()._hashchanged(ptr + 1);
+        else
+          qtLoader.module()._hashchanged(ptr);
+      }, false);
+    </script>
+    <script type="text/javascript" src="assets/plugins/wasm/qtloader.js"></script>

@@ -14,6 +14,7 @@ pyside6-rcc plugins/texteditor.qrc -o plugins/texteditor_rc.py
 pyside6-rcc plugins/github.qrc -o plugins/github_rc.py
 pyside6-rcc plugins/shopify.qrc -o plugins/shopify_rc.py
 pyside6-rcc plugins/markdowneditor.qrc -o plugins/markdowneditor_rc.py
+pyside6-rcc plugins/wasm.qrc -o plugins/wasm_rc.py
 
 C:\Qt\6.4.2\mingw_64\bin\lrelease translation\FlatSiteBuilder_de.ts
 

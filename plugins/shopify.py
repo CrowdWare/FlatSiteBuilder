@@ -127,7 +127,7 @@ class ShopifyEditor(ElementEditorInterface):
     def registerContenType(self):
         qmlRegisterType(Shopify, 'ShopifyEditor', 1, 0, 'Shopify')
 
-    def writeImportString(self, f):
+    def getImportString(self, f):
         f.write("import ShopifyEditor 1.0\n")
 
     def pluginScripts(self):
@@ -148,7 +148,7 @@ class Shopify(Item):
         txt.adminlabel = self._adminlabel
         return txt
 
-    def save(self, f, indent):
+    def getQml(self, f, indent):
         f.write("\n")
         f.write(" " * indent + "Shopify {\n")
         self.writeAttribute(f, indent + 4, "id", self._id)

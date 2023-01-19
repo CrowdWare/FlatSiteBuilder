@@ -410,6 +410,7 @@ class RevolutionSlider(Item):
     def removeSlides(self):
         self._items.clear()
 
+
 class SlideEditor(AnimateableEditor):
 
     def __init__(self):

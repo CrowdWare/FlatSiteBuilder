@@ -25,7 +25,7 @@ from PySide6.QtWidgets import (QComboBox, QGridLayout, QHBoxLayout, QLabel,
                              QVBoxLayout, QWidget)
 
 from widgets.content import ContentType
-##from widgets.dropzone import DropZone
+from widgets.dropzone import DropZone
 from widgets.elementeditor import ElementEditor, Mode
 from widgets.flatbutton import FlatButton
 from widgets.hyperlink import HyperLink
