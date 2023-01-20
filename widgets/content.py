@@ -159,7 +159,7 @@ class Content(QObject):
         return qml
 
     def save(self, filename):
-        qml = "import FlatSiteBuilder 1.0\n"
+        qml = "import FlatSiteBuilder 2.0\n"
             
         taglist = []
         self.collectTagNames(taglist)

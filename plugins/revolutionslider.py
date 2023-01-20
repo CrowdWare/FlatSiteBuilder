@@ -378,7 +378,8 @@ class RevolutionSlider(Item):
         htm = "<div class=\"" + sliderContainerClass + "\">\n"
         htm += "<div class=\"" + sliderClass + "\">\n"
         htm += "<ul>\n"
-        for slide in self._items:
+        for i in range(self.itemCount()):
+            slide = self.item(i)
             url = slide.src[slide.src.index("assets/images/"):]
             htm += "<li data-transition=\"" + self._data_transition + "\" data-masterspeed=\"" + self._data_masterspeed + "\""
             htm += ">\n"
@@ -399,13 +400,14 @@ class RevolutionSlider(Item):
         qml += self.getAttributeQml(indent + 4, "adminlabel", self._adminlabel)
         qml += self.getAttributeQml(indent + 4, "fullwidth", self._fullwidth)
         qml += self.getAttributeQml(indent + 4, "fullscreen", self._fullscreen)
-        for slide in self._items:
+        for i in range(self.itemCount()):
+            slide = self.item(i)
             qml += slide.getQml(indent + 4)
         qml += " " * indent + "}\n"
         return qml
 
     def addSlide(self, slide):
-        self._items.append(slide)
+        self.appendItem(slide)
 
     def removeSlides(self):
         self._items.clear()
@@ -445,7 +447,7 @@ class SlideEditor(AnimateableEditor):
         self.innerHtml.setAcceptRichText(False)
         self.innerHtml.setLineWrapMode(QTextEdit.NoWrap)
         metrics = QFontMetrics(font)
-        self.innerHtml.setTabStopDistance(4 * metrics.width(' '))
+        self.innerHtml.setTabStopDistance(4 * metrics.horizontalAdvance(' '))
         XmlHighlighter(self.innerHtml.document())
 
         grid.addWidget(titleLabel, 0, 0)
@@ -505,7 +507,7 @@ class SlideEditor(AnimateableEditor):
         # copy file to assets dir
         info = QFileInfo(fileName)
         name = info.fileName().replace(" ", "_")
-        path = os.path.join(self.site.source_path, "assets", "images",  name)
+        path = self.site.source_path + "/assets/images/" + name
         self.source.setText(path)
         try:
             shutil.copy2(fileName, path)

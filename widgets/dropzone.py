@@ -27,7 +27,7 @@ class DropZone(QWidget):
     def __init__(self, w, h):
         QWidget.__init__(self)
         pal = self.palette()
-        pal.setColor(QPalette.Background, QColor(self.palette().base().color().name()).lighter().lighter())
+        pal.setColor(QPalette.Window, QColor(self.palette().base().color().name()).lighter().lighter())
         self.setPalette(pal)
         self.setAutoFillBackground(True)
         self.setMinimumWidth(w)

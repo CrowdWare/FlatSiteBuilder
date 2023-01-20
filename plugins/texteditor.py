@@ -65,7 +65,7 @@ class TextEditor(ElementEditorInterface):
         self.html.setAcceptRichText(False)
         self.html.setLineWrapMode(QTextEdit.NoWrap)
         metrics = QFontMetrics(font)
-        self.html.setTabStopDistance(4 * metrics.width(' '))
+        self.html.setTabStopDistance(4 * metrics.horizontalAdvance(' '))
 
         self.highlighter = XmlHighlighter(self.html.document())
 

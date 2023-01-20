@@ -1,4 +1,4 @@
-import FlatSiteBuilder 1.0
+import FlatSiteBuilder 2.0
 
 Site {
    title: 'default'

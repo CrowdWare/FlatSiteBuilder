@@ -144,7 +144,7 @@ class Site(QObject):
         self.win = win
 
     def save(self):
-        html = "import FlatSiteBuilder 1.0\n\n"
+        html = "import FlatSiteBuilder 2.0\n\n"
         html += "Site {\n"
         html += "   title: '" + self.title + "'\n"
         html += "   theme: '" + self.theme + "'\n"
@@ -163,7 +163,7 @@ class Site(QObject):
             self.win.statusBar().showMessage(QCoreApplication.translate("Site", "Site has been saved"))
 
     def saveMenus(self):
-        html = "import FlatSiteBuilder 1.0\n\n"
+        html = "import FlatSiteBuilder 2.0\n\n"
         html += "Menus {\n"
         for i in range(self.menus.menuCount()):
             menu = self.menus.menu(i)

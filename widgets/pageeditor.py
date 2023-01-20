@@ -25,7 +25,7 @@ from widgets.section import Section
 from widgets.sectioneditor import SectionEditor
 from widgets.content import ContentType
 from widgets.columneditor import ColumnEditor
-#from widgets.dropzone import DropZone
+from widgets.dropzone import DropZone
 from PySide6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, QLabel, QPushButton, QLineEdit, QComboBox, QScrollArea
 from PySide6.QtCore import Qt, QUrl, QCoreApplication
 from PySide6.QtGui import QUndoStack

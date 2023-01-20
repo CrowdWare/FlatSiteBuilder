@@ -1,5 +1,5 @@
-import FlatSiteBuilder 1.0
-import TextEditor 1.0
+import FlatSiteBuilder 2.0
+import TextEditor 2.0
 
 Content {
     title: "Test"

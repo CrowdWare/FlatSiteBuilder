@@ -449,7 +449,7 @@ class MenuEditor(AnimateableEditor):
             menuitem = twi.data(0, Qt.UserRole)
             tcb.setEnableDown(i != self.tree.topLevelItemCount() - 1)
             tcb.setEnableUp(i != 0)
-            tcb.setEnableRight(i != 0 and len(menuitem.items) == 0)
+            tcb.setEnableRight(i != 0 and menuitem.itemCount() == 0)
             tcb.setEnableLeft(False)
             for j in range(0, twi.childCount()):
                 stwi = twi.child(j)
@@ -457,8 +457,8 @@ class MenuEditor(AnimateableEditor):
                 stcb.setEnableLeft(True)
 
     def resort(self):
-        while len(self.menu._items) > 0:
-            self.menu.removeItem(self.menu._items[0])
+        while self.menu.itemCount() > 0:
+            self.menu.removeItem(self.menu.item(0))
 
         for i in range(0, self.tree.topLevelItemCount()):
             item = self.tree.topLevelItem(i)

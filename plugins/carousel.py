@@ -434,7 +434,7 @@ class SlideEditor(AnimateableEditor):
         self.innerHtml.setAcceptRichText(False)
         self.innerHtml.setLineWrapMode(QTextEdit.NoWrap)
         metrics = QFontMetrics(font)
-        self.innerHtml.setTabStopDistance(4 * metrics.width(' '))
+        self.innerHtml.setTabStopDistance(4 * metrics.horizontalAdvance(' '))
         XmlHighlighter(self.innerHtml.document())
 
         grid.addWidget(titleLabel, 0, 0)

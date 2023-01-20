@@ -117,7 +117,7 @@ class Dashboard(QWidget):
 
         manager = QNetworkAccessManager(self)
         manager.finished.connect(self.fileIsReady)
-        manager.get(QNetworkRequest(QUrl("https://artanidos.github.io/FlatSiteBuilder/news.html")))
+        manager.get(QNetworkRequest(QUrl("https://CrowdWare.github.io/FlatSiteBuilder/news.html")))
 
     @Slot(QNetworkReply)
     def fileIsReady(self, reply):

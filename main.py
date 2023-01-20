@@ -59,14 +59,14 @@ if __name__ == "__main__":
         print("translation for " + locale + " loaded")
         app.installTranslator(appTranslator)
 
-    qmlRegisterType(Site, 'FlatSiteBuilder', 1, 0, 'Site')
-    qmlRegisterType(Content, 'FlatSiteBuilder', 1, 0, 'Content')
-    qmlRegisterType(Menus, 'FlatSiteBuilder', 1, 0, 'Menus')
-    qmlRegisterType(Menu, 'FlatSiteBuilder', 1, 0, 'Menu')
-    qmlRegisterType(Menuitem, 'FlatSiteBuilder', 1, 0, 'Menuitem')
-    qmlRegisterType(Section, 'FlatSiteBuilder', 1, 0, 'Section')
-    qmlRegisterType(Row, 'FlatSiteBuilder', 1, 0, 'Row')
-    qmlRegisterType(Column, 'FlatSiteBuilder', 1, 0, 'Column')
+    qmlRegisterType(Site, 'FlatSiteBuilder', 2, 0, 'Site')
+    qmlRegisterType(Content, 'FlatSiteBuilder', 2, 0, 'Content')
+    qmlRegisterType(Menus, 'FlatSiteBuilder', 2, 0, 'Menus')
+    qmlRegisterType(Menu, 'FlatSiteBuilder', 2, 0, 'Menu')
+    qmlRegisterType(Menuitem, 'FlatSiteBuilder', 2, 0, 'Menuitem')
+    qmlRegisterType(Section, 'FlatSiteBuilder', 2, 0, 'Section')
+    qmlRegisterType(Row, 'FlatSiteBuilder', 2, 0, 'Row')
+    qmlRegisterType(Column, 'FlatSiteBuilder', 2, 0, 'Column')
 
     font = QFont("Sans Serif", 11) #15 on mac, 11 on Linux
     app.setFont(font)
