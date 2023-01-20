@@ -9,6 +9,6 @@ Site {
    author: ''
    logo: ''
    language: 'en'
-   publisher: 'GithubPublisher'
+   publisher: 'NoPublisher'
    output: '../docs'
 }

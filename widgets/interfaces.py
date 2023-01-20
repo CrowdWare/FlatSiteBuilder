@@ -80,8 +80,8 @@ class PublisherInterface(QWidget):
         self.version = ""
         self._site_path = ""
 
-    def setSitePath(self, path):
-        self._site_path = path
+    def setSitePath(self, site_path, project_path):
+        self._site_path = site_path
 
 
 class GeneratorInterface():

@@ -70,8 +70,8 @@ class GithubPublisher(PublisherInterface):
         self.reponame.setText(settings.value("github.reponame"))
 
 
-    def setSitePath(self, path):
-        self.site_path = path
+    def setSitePath(self, site_path, project_path):
+        self.site_path = site_path
 
     def push(self):
         QApplication.setOverrideCursor(Qt.WaitCursor)
