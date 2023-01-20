@@ -37,4 +37,4 @@ copy images\icon_128.png packages\at.crowdware.FlatSiteBuilder\data\icon
 
 
 move packages\at.crowdware.FlatSiteBuilder\data\main.exe packages\at.crowdware.FlatSiteBuilder\data\FlatSiteBuilder.exe
-C:\Qt\Tools\QtInstallerFramework\4.5\bin\binarycreator -f -c config/config.xml -p packages FlatSiteBuilder-Windows-3.0.0.Setup
+C:\Qt\Tools\QtInstallerFramework\3.2.2\bin\binarycreator -f -c config/config.xml -p packages FlatSiteBuilder-Windows-2.3.0.Setup

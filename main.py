@@ -33,7 +33,9 @@ from PySide6.QtWidgets import QApplication, QStyleFactory
 from PySide6.QtCore import Qt, QCoreApplication, QSettings, QTranslator, QLocale, QLibraryInfo
 from PySide6.QtGui import QPalette, QColor, QIcon, QFont
 from PySide6.QtQml import qmlRegisterType
-from dulwich import porcelain #needed for the github plugin and pyinstaller
+#needed for the plugins and pyinstaller
+from dulwich import porcelain 
+from markdown2 import markdown
 import main_rc
 
 

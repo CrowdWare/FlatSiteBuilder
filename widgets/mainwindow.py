@@ -229,7 +229,7 @@ class MainWindow(QMainWindow):
         self.default_path = settings.value("lastSite")
 
     def reloadProject(self, filename):
-        sys.stdout.flush()
+        #sys.stdout.flush()
         engine = QQmlEngine()
         self.site_component = component = QQmlComponent(engine)
         self.site_component.loadUrl(QUrl.fromLocalFile(filename))

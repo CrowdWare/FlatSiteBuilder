@@ -24,9 +24,3 @@
         File "/home/art/SourceCode/FlatSiteBuilderPython/widgets/contenteditor.py", line 418, in editorClose
         if self.editor.changed:
         AttributeError: 'NoneType' object has no attribute 'changed'
-
-
-# Website
-    Translate website (FlatSiteBuider) from XML to QML
-    Host a new website on FlatSiteBuiderPython
-    News should be in english and german

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <Package>
+      <DisplayName>FlatSiteBuilder</DisplayName>
+      <Description>Install FlatSiteBuilder 2.3.0 on your computer.</Description>
+      <Version>2.3.0</Version>
+      <ReleaseDate>2023-01-20</ReleaseDate>
+      <Default>true</Default>
+      <Script>installscript.qs</Script>
+  </Package>

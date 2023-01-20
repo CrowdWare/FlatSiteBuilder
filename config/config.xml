@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <Installer>
+      <Name>FlatSiteBuilder</Name>
+      <Version>2.3.0</Version>
+      <Title>FlatSiteBuilder</Title>
+      <Publisher>CrowdWare</Publisher>
+      <InstallerWindowIcon>icon/icon_128.png</InstallerWindowIcon>
+      <InstallerApplicationIcon>icon/icon_128</InstallerApplicationIcon>
+      <StartMenuDir></StartMenuDir>
+      <TargetDir>@HomeDir@/FlatSiteBuilder</TargetDir>
+      <Translations>
+        <Translation>en.qm</Translation>
+    </Translations>
+  </Installer>
+
+  <!--
+    https://doc.qt.io/qtinstallerframework/ifw-globalconfig.html
+  -->
