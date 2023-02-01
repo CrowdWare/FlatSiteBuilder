@@ -36,7 +36,7 @@ Content {
 &lt;/h1&gt;
 &lt;p class=&quot;lead&quot;&gt;Wussten Sie, dass Sie Ihre Projekt-Website kostenlos auf Github-Pages hosten können?&lt;/p&gt;
 &lt;p class=&quot;lead&quot;&gt;
-Der FlatSiteBuilder ist ein sehr einfach zu verwendendes Content-Management-System (CMS) und ein Werkzeug zur Erstellung von Inhalten, das als Desktop-Anwendung unter Linux ausgeführt wird. 
+Der FlatSiteBuilder ist ein sehr einfach zu verwendendes Content-Management-System (CMS) und ein Werkzeug zur Erstellung von Inhalten, das als Desktop-Anwendung unter Linux und Windows ausgeführt wird. 
 Sie können Webinhalte erstellen, die Sie kostenlos auf Github-Pages oder bei einem anderen Anbieter hosten können. 
 Da alle Seiten auf dem Desktop erstellt werden, ist es das schnellste Content-Management-System, das verfügbar ist. 
 Es wird kein Code auf dem Webserver ausgeführt.
@@ -375,7 +375,7 @@ Wir verwenden auch disqus, siehe unten unter Kommentare.&lt;/p&gt;"
         Row {
 
             Column {
-                span: 12
+                span: 8
 
                 Text {
                     text: "&lt;div class=&quot;divider styleColor&quot;&gt;&lt;/div&gt; 
@@ -383,6 +383,14 @@ Wir verwenden auch disqus, siehe unten unter Kommentare.&lt;/p&gt;"
 &lt;p class=&quot;lead&quot;&gt;Hier kannst Du das letzte Release runterladen: &lt;a href=&quot;https://github.com/CrowdWare/FlatSiteBuilder/releases&quot;&gt;&lt;img src=&quot;assets/images/download.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 "
                     adminlabel: "Downloads"
+                }
+            }
+
+            Column {
+                span: 4
+
+                Text {
+                    text: "&lt;a href=&quot;https://www.producthunt.com/posts/flatsitebuilder?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-flatsitebuilder&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=377562&amp;theme=neutral&quot; alt=&quot;FlatSiteBuilder - FSB&amp;#0032;is&amp;#0032;a&amp;#0032;easy&amp;#0032;to&amp;#0032;use&amp;#0032;content&amp;#0032;creation&amp;#0032;tool&amp;#0032;for&amp;#0032;the&amp;#0032;desktop | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;"
                 }
             }
         }

@@ -37,7 +37,7 @@ Content {
 &lt;p class=&quot;lead&quot;&gt;Did you know that you are able to host your project website on Github-Pages for free?&lt;/p&gt;
 &lt;p class=&quot;lead&quot;&gt;
 	The FlatSiteBuilder is a very easy to use content management system (CMS) and content 
-	creation tool running as a desktop application on Linux.
+	creation tool running as a desktop application on Linux and Windows.
 	You are able to build web content which you can host on github pages for free or any 
 	other web space provider.
 	Because all of the pages are beeing build on the desktop it is the fastest content 
@@ -372,7 +372,7 @@ We are also using disqus, see below under comments.&lt;/p&gt;"
         Row {
 
             Column {
-                span: 12
+                span: 8
 
                 Text {
                     text: "&lt;div class=&quot;divider styleColor&quot;&gt;&lt;/div&gt; 
@@ -380,6 +380,14 @@ We are also using disqus, see below under comments.&lt;/p&gt;"
 &lt;p class=&quot;lead&quot;&gt;Here you can download our latest release. &lt;a href=&quot;https://github.com/CrowdWare/FlatSiteBuilder/releases&quot;&gt;&lt;img src=&quot;assets/images/download.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 "
                     adminlabel: "Downloads"
+                }
+            }
+
+            Column {
+                span: 4
+
+                Text {
+                    text: "&lt;a href=&quot;https://www.producthunt.com/posts/flatsitebuilder?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-flatsitebuilder&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=377562&amp;theme=neutral&quot; alt=&quot;FlatSiteBuilder - FSB&amp;#0032;is&amp;#0032;a&amp;#0032;easy&amp;#0032;to&amp;#0032;use&amp;#0032;content&amp;#0032;creation&amp;#0032;tool&amp;#0032;for&amp;#0032;the&amp;#0032;desktop | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;"
                 }
             }
         }
@@ -414,6 +422,7 @@ s.setAttribute(&#x27;data-timestamp&#x27;, +new Date());
 })();
 &lt;/script&gt;
 &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;"
+                    adminlabel: "Comments"
                 }
             }
         }
