@@ -375,10 +375,21 @@ Wir verwenden auch disqus, siehe unten unter Kommentare.&lt;/p&gt;"
         Row {
 
             Column {
+                span: 12
+
+                Text {
+                    text: "&lt;div class=&quot;divider styleColor&quot;&gt;&lt;/div&gt; "
+                }
+            }
+        }
+
+        Row {
+
+            Column {
                 span: 8
 
                 Text {
-                    text: "&lt;div class=&quot;divider styleColor&quot;&gt;&lt;/div&gt; 
+                    text: "
 &lt;h3&gt;&lt;strong&gt;Downloads&lt;/strong&gt;&lt;/h3&gt; 
 &lt;p class=&quot;lead&quot;&gt;Hier kannst Du das letzte Release runterladen: &lt;a href=&quot;https://github.com/CrowdWare/FlatSiteBuilder/releases&quot;&gt;&lt;img src=&quot;assets/images/download.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 "

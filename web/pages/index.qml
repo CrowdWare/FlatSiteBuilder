@@ -372,10 +372,21 @@ We are also using disqus, see below under comments.&lt;/p&gt;"
         Row {
 
             Column {
+                span: 12
+
+                Text {
+                    text: "&lt;div class=&quot;divider styleColor&quot;&gt;&lt;/div&gt; "
+                }
+            }
+        }
+
+        Row {
+
+            Column {
                 span: 8
 
                 Text {
-                    text: "&lt;div class=&quot;divider styleColor&quot;&gt;&lt;/div&gt; 
+                    text: "
 &lt;h3&gt;&lt;strong&gt;Downloads&lt;/strong&gt;&lt;/h3&gt; 
 &lt;p class=&quot;lead&quot;&gt;Here you can download our latest release. &lt;a href=&quot;https://github.com/CrowdWare/FlatSiteBuilder/releases&quot;&gt;&lt;img src=&quot;assets/images/download.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 "
@@ -387,7 +398,9 @@ We are also using disqus, see below under comments.&lt;/p&gt;"
                 span: 4
 
                 Text {
-                    text: "&lt;a href=&quot;https://www.producthunt.com/posts/flatsitebuilder?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-flatsitebuilder&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=377562&amp;theme=neutral&quot; alt=&quot;FlatSiteBuilder - FSB&amp;#0032;is&amp;#0032;a&amp;#0032;easy&amp;#0032;to&amp;#0032;use&amp;#0032;content&amp;#0032;creation&amp;#0032;tool&amp;#0032;for&amp;#0032;the&amp;#0032;desktop | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;&lt;/a&gt;"
+                    text: "&lt;a href=&quot;https://www.producthunt.com/posts/flatsitebuilder?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-flatsitebuilder&quot; target=&quot;_blank&quot;&gt;
+&lt;img src=&quot;https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=377562&amp;theme=neutral&quot; alt=&quot;FlatSiteBuilder - FSB&amp;#0032;is&amp;#0032;a&amp;#0032;easy&amp;#0032;to&amp;#0032;use&amp;#0032;content&amp;#0032;creation&amp;#0032;tool&amp;#0032;for&amp;#0032;the&amp;#0032;desktop | Product Hunt&quot; style=&quot;width: 250px; height: 54px;&quot; width=&quot;250&quot; height=&quot;54&quot; /&gt;
+&lt;/a&gt;"
                 }
             }
         }
