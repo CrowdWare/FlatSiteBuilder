@@ -1,8 +1,0 @@
-<RCC>
-    <qresource>
-        <file>wasm.svg</file>
-        <file>qtloader.js</file>
-        <file>appqmlwasm.wasm</file>
-        <file>appqmlwasm.js</file>
-    </qresource>
-</RCC>

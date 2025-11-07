@@ -12,6 +12,7 @@ pyside6-rcc plugins/revolution.qrc -o plugins/revolution_rc.py
 pyside6-rcc plugins/texteditor.qrc -o plugins/texteditor_rc.py
 pyside6-rcc plugins/github.qrc -o plugins/github_rc.py
 pyside6-rcc plugins/shopify.qrc -o plugins/shopify_rc.py
+pyside6-rcc plugins/wasm.qrc -o plugins/wasm_rc.py
 
 /home/art/Qt/6.2.1/gcc_64/bin/lrelease translation/FlatSiteBuilder_de.ts
 
@@ -33,4 +34,4 @@ cp images/icon_128.ico packages/at.crowdware.flatsitebuilder/data/icon
 cp images/icon_128.png packages/at.crowdware.flatsitebuilder/data/icon
 
 mv packages/at.crowdware.flatsitebuilder/data/main packages/at.crowdware.flatsitebuilder/data/FlatSiteBuilder
-/home/art/Qt/Tools/QtInstallerFramework/4.2/bin/binarycreator -f -c config/config.xml -p packages FlatSiteBuilder-Linux-2.1.9.Setup
+/home/art/Qt/Tools/QtInstallerFramework/4.2/bin/binarycreator -f -c config/config.xml -p packages FlatSiteBuilder-Linux-2.3.0.Setup
